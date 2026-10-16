@@ -1,234 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Nawaz Sharif | DevSecOps & Cloud Security Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Cross-browser & Mobile/Safari layout protection */
-        html, body {
-            overflow-x: hidden;
-        }
-        .pill-badge {
-            display: inline-block !important;
-            width: auto !important;
-            max-width: 100%;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        .pill-nowrap {
-            white-space: nowrap !important;
-        }
-        .btn-action {
-            display: inline-flex !important;
-            align-items: center;
-            justify-content: center;
-            white-space: nowrap !important;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nawaz Sharif | DevSecOps & Cloud Security</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
+    }
+  </script>
+  <style>
+    body { background-color: #f8fafc; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 22px 22px; overflow-x: hidden; }
+    .pill { display: inline-block !important; width: auto !important; white-space: nowrap !important; padding: 3px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; }
+    .btn { display: inline-flex !important; align-items: center; justify-content: center; white-space: nowrap !important; }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-emerald-600 selection:text-white">
+<body class="text-slate-900 font-sans antialiased">
 
-    <!-- Navbar (Works on both Mobile & Laptop) -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-slate-200 shadow-sm">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
-            <a href="#" class="font-mono text-base sm:text-lg font-bold text-emerald-700 tracking-tight pill-nowrap">
-                &gt; nawaz_sharif_
-            </a>
-            <nav class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold text-slate-600">
-                <a href="#projects" class="hover:text-emerald-600 transition pill-nowrap">Projects</a>
-                <a href="#architecture" class="hover:text-emerald-600 transition pill-nowrap">Architecture</a>
-                <a href="#skills" class="hover:text-emerald-600 transition pill-nowrap">Tech Stack</a>
-                <a href="https://github.com/hey-nawazsharif" target="_blank" class="text-emerald-700 hover:underline font-mono pill-nowrap">GitHub &#8599;</a>
-            </nav>
-        </div>
-    </header>
+  <!-- Top Status Bar -->
+  <div class="bg-slate-900 text-slate-300 text-xs font-mono py-2 px-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <span>● SENTINEL CI/CD: <strong class="text-emerald-400">PASSING</strong> | SHA-256 LEDGER: <strong class="text-cyan-400">VERIFIED</strong></span>
+      <a href="https://github.com/hey-nawazsharif/aegiskube-secops" target="_blank" class="text-emerald-400 hover:underline">aegiskube-secops ↗</a>
+    </div>
+  </div>
 
-    <!-- Main Container -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 sm:pt-14 pb-20">
-        
-        <!-- Hero Section (Stacks cleanly on Mobile, Side-by-Side on Laptop) -->
-        <section class="py-6 sm:py-12 border-b border-slate-200">
-            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
-                
-                <!-- Left Text Column -->
-                <div class="w-full md:flex-1 text-center md:text-left">
-                    <div class="pill-badge bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono mb-5 text-xs">
-                        &#9679; Available for DevSecOps &amp; Security Roles
-                    </div>
-                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 sm:mb-6 leading-tight">
-                        Securing Linux Hosts, <br class="hidden sm:inline">
-                        <span class="text-emerald-600">
-                            Containers &amp; CI/CD Pipelines.
-                        </span>
-                    </h1>
-                    <p class="text-slate-600 text-base sm:text-lg max-w-xl mb-6 sm:mb-8 leading-relaxed mx-auto md:mx-0">
-                        Hi, I'm <strong class="text-slate-900">Nawaz Sharif</strong>. I build automated security sentinels, tamper-evident audit systems, and hardened cloud-native infrastructure using Python, Docker, Linux, and Kubernetes.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 sm:gap-4 w-full sm:w-auto">
-                        <a href="#projects" class="btn-action w-full sm:w-auto px-6 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold transition shadow-sm text-sm sm:text-base">
-                            View Featured Work
-                        </a>
-                        <a href="https://github.com/hey-nawazsharif" target="_blank" class="btn-action w-full sm:w-auto px-6 py-3 rounded-lg bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-mono text-xs sm:text-sm font-medium transition shadow-sm">
-                            github.com/hey-nawazsharif &#8599;
-                        </a>
-                    </div>
-                </div>
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <a href="#" class="font-mono text-base font-bold text-slate-900"><span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-xs mr-1">SEC</span>nawaz_sharif_</a>
+      <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-600">
+        <a href="#architecture" class="hover:text-emerald-600">Architecture</a>
+        <a href="#hashchain" class="hover:text-emerald-600">SHA-256 Chain</a>
+        <a href="#terminal" class="hover:text-emerald-600">Live CLI</a>
+        <a href="#skills" class="hover:text-emerald-600">Tech Stack</a>
+        <a href="https://github.com/hey-nawazsharif" target="_blank" class="text-emerald-700 font-mono">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
 
-                <!-- Right Profile Photo Column -->
-                <div class="flex-shrink-0">
-                    <div class="relative inline-block">
-                        <div class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full p-1.5 bg-gradient-to-tr from-emerald-500 to-cyan-500 shadow-xl mx-auto">
-                            <img 
-                                src="https://github.com/hey-nawazsharif.png" 
-                                alt="Nawaz Sharif" 
-                                class="w-full h-full object-cover rounded-full border-4 border-white bg-white"
-                            >
-                        </div>
-                        <span class="pill-badge pill-nowrap bg-slate-900 text-white font-mono shadow-md absolute -bottom-2 left-1/2 -translate-x-1/2">
-                            DevSecOps
-                        </span>
-                    </div>
-                </div>
+  <main class="max-w-6xl mx-auto px-4 py-8 sm:py-12 space-y-12">
 
-            </div>
-        </section>
-
-        <!-- Featured Project Section -->
-        <section id="projects" class="py-12 sm:py-16 border-b border-slate-200">
-            <div class="mb-6 sm:mb-8">
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
-                    <span class="font-mono text-emerald-600 text-base sm:text-lg mr-2">01.</span>Featured Security Engineering Project
-                </h2>
-            </div>
-
-            <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-8 shadow-sm">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4">
-                    <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mr-1">AegisKube-SecOps</h3>
-                        <span class="pill-badge pill-nowrap font-mono bg-emerald-100 text-emerald-800 border border-emerald-300">
-                            CI/CD Passing
-                        </span>
-                        <span class="pill-badge pill-nowrap font-mono bg-blue-100 text-blue-800 border border-blue-300">
-                            Apache 2.0
-                        </span>
-                    </div>
-                    <a href="https://github.com/hey-nawazsharif/aegiskube-secops" target="_blank" class="font-mono text-xs sm:text-sm font-semibold text-emerald-700 hover:text-emerald-800 pill-nowrap">
-                        View Source &amp; CI Pipeline &#8599;
-                    </a>
-                </div>
-
-                <p class="text-slate-600 text-sm sm:text-base mb-6 leading-relaxed">
-                    A zero-trust security sentinel for Linux and Kubernetes combining host hardening checks, heuristic threat detection, and a tamper-evident SHA-256 hash-chain audit ledger. Built with automated GitHub Actions testing and containerized execution.
-                </p>
-
-                <!-- Terminal Preview (Responsive Scroll on Mobile) -->
-                <div id="architecture" class="rounded-xl bg-slate-900 border border-slate-800 p-4 sm:p-5 font-mono text-xs sm:text-sm text-slate-200 mb-6 overflow-x-auto shadow-inner">
-                    <div class="pb-2.5 mb-3 border-b border-slate-800 text-slate-400 text-xs pill-nowrap">
-                        <span class="text-red-400">&#9679;</span>
-                        <span class="text-amber-400 ml-1">&#9679;</span>
-                        <span class="text-emerald-400 ml-1">&#9679;</span>
-                        <span class="ml-2">bash &mdash; aegiskube-secops</span>
-                    </div>
-                    <div class="space-y-1 min-w-[280px]">
-                        <p class="text-emerald-400 break-all sm:break-normal">$ git clone https://github.com/hey-nawazsharif/aegiskube-secops.git</p>
-                        <p class="text-emerald-400">$ python3 tests/test_sentinel.py &amp;&amp; python3 src/main.py --demo</p>
-                        <p class="text-slate-300 pt-2">[INFO] Initializing AegisKube-SecOps Sentinel...</p>
-                        <p class="text-slate-300">[OK] Linux Hardening Audit: sysctl, SSH config, sockets verified.</p>
-                        <p class="text-amber-400">[WARN] Heuristic anomaly check flagged suspicious privileges.</p>
-                        <p class="text-cyan-400">[SUCCESS] Tamper-evident SHA-256 block chained &amp; verified.</p>
-                    </div>
-                </div>
-
-                <!-- Implemented & Roadmap Highlights (1 Col on Mobile, 2 Col on Laptop) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-xs sm:text-sm">
-                    <div class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200">
-                        <h4 class="font-mono text-emerald-700 font-bold mb-2 text-sm">&#10003; Implemented Modules</h4>
-                        <ul class="space-y-1.5 text-slate-600">
-                            <li>&bull; SHA-256 Hash-Chain Ledger &amp; Tamper Detection</li>
-                            <li>&bull; Read-only Linux Host Hardening Audit (sysctl, SSH)</li>
-                            <li>&bull; Automated GitHub Actions CI/CD &amp; Unit Tests</li>
-                            <li>&bull; Hardened Docker Container Packaging</li>
-                        </ul>
-                    </div>
-                    <div class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200">
-                        <h4 class="font-mono text-blue-700 font-bold mb-2 text-sm">&#9889; Active Roadmap</h4>
-                        <ul class="space-y-1.5 text-slate-600">
-                            <li>&bull; Critical File Integrity Monitor (/etc/passwd, /etc/shadow)</li>
-                            <li>&bull; SUID Binary &amp; auth.log Privilege Escalation Parser</li>
-                            <li>&bull; Scikit-Learn IsolationForest Syscall Anomaly Model</li>
-                            <li>&bull; Kubernetes DaemonSet Cluster Manifests</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Tech Tags -->
-                <div class="flex flex-wrap gap-2 font-mono text-xs">
-                    <span class="pill-badge pill-nowrap bg-slate-100 text-slate-700 border border-slate-300">Python 3.10+</span>
-                    <span class="pill-badge pill-nowrap bg-slate-100 text-slate-700 border border-slate-300">Linux Security</span>
-                    <span class="pill-badge pill-nowrap bg-slate-100 text-slate-700 border border-slate-300">SHA-256 Hash Chain</span>
-                    <span class="pill-badge pill-nowrap bg-slate-100 text-slate-700 border border-slate-300">GitHub Actions CI</span>
-                    <span class="pill-badge pill-nowrap bg-slate-100 text-slate-700 border border-slate-300">Docker</span>
-                    <span class="pill-badge pill-nowrap bg-slate-100 text-slate-700 border border-slate-300">Kubernetes</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills & Tooling (1 Col on Mobile, 3 Col on Laptop) -->
-        <section id="skills" class="py-12 sm:py-16">
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 sm:mb-8">
-                <span class="font-mono text-emerald-600 text-base sm:text-lg mr-2">02.</span>Core Competencies &amp; Tooling
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                <div class="p-5 sm:p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
-                    <h3 class="font-mono text-emerald-700 font-bold mb-2 sm:mb-3 text-base">SecOps &amp; Linux</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Host Hardening (sysctl, SSH), File Integrity Monitoring, Log Parsing, Cryptographic Audit Trails, Zero-Trust Principles.
-                    </p>
-                </div>
-                <div class="p-5 sm:p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
-                    <h3 class="font-mono text-blue-700 font-bold mb-2 sm:mb-3 text-base">DevOps &amp; Cloud</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Docker Containerization, GitHub Actions CI/CD, Automated Linting &amp; Testing (pytest, flake8, black, mypy), Kubernetes Basics.
-                    </p>
-                </div>
-                <div class="p-5 sm:p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
-                    <h3 class="font-mono text-purple-700 font-bold mb-2 sm:mb-3 text-base">Programming</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Python 3, Bash Scripting, CLI Tool Development, Anomaly Detection Pipelines, Git Version Control.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 bg-white py-6 sm:py-8 text-center text-xs sm:text-sm text-slate-500 font-mono">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-            <p>Built by Nawaz Sharif</p>
-            <div class="flex gap-6">
-                <a href="https://github.com/hey-nawazsharif" target="_blank" class="hover:text-emerald-700 transition">GitHub</a>
-                <a href="https://github.com/hey-nawazsharif/aegiskube-secops" target="_blank" class="hover:text-emerald-700 transition">AegisKube-SecOps</a>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+    <!-- HERO SECTION + PROFILE PHOTO -->
+    <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
+      <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8">
+        <div class="flex-1 text-center md:text-left">
+          <span class="pill bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono mb-4">🛡️ DevSecOps • Linux Hardening • Cloud Security</span>
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
+            Engineering Zero-Trust <span class="text-emerald-600">Linux & Container Sentinels.</span>
+          </h1>
+          <p class="text-slate-600 text-sm sm:text-base max-w-2xl mb-6">
+            Hi, I'm <strong>Nawaz Sharif</strong>. I build automated Linux host-hardening auditors, cryptographic SHA-256 tamper-evident audit ledgers, and CI/CD security pipelines using Python, Docker, Linux, and Kubernetes.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6 text-left font-mono text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="text-slate-400 block">LEDGER</span><strong class="text-slate-900">SHA-256 Chain</strong></div>
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="text-slate-400 block">PROBE</span><strong class="text-slate-900">Read-Only Audit</strong></div>
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="text-slate-400 block">CI/CD</span><strong class="text-emerald-600">GitHub Actions</strong></div>
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="text-slate-400 block">RUNTIME</span><strong class="text-slate-900">Python & Docker</strong></div>
+          </div>
+          <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3">
+            <a href="#architecture" class="btn px-6 py-3 rounded-xl bg
