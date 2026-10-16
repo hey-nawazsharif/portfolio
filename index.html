@@ -1,64 +1,200 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nawaz Sharif | DevSecOps & Cloud Security</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
-    }
-  </script>
-  <style>
-    body { background-color: #f8fafc; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 22px 22px; overflow-x: hidden; }
-    .pill { display: inline-block !important; width: auto !important; white-space: nowrap !important; padding: 3px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; }
-    .btn { display: inline-flex !important; align-items: center; justify-content: center; white-space: nowrap !important; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nawaz Sharif — Linux & DevSecOps engineer</title>
+<meta name="description" content="Nawaz Sharif builds security tooling for Linux and Kubernetes: host hardening checks, threat detection and tamper-evident audit logs.">
+<meta name="theme-color" content="#0f1720">
+<meta property="og:title" content="Nawaz Sharif — Linux & DevSecOps engineer">
+<meta property="og:description" content="Security tooling for Linux and Kubernetes, built in Python and tested in CI.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1720'/%3E%3Cpath d='M8 22V10l8 12V10m6 12V10' stroke='%236cb6ff' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1720;--panel:#16212c;--line:#263544;--text:#e6edf3;--muted:#93a1ae;--link:#6cb6ff;--ok:#3fb950;--bad:#ff7b72;
+--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box}
+html{background:var(--bg);color-scheme:dark;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font:400 17px/1.65 var(--sans);color:var(--text);-webkit-text-size-adjust:100%}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+main,header,footer{max-width:820px;margin:0 auto;padding-left:24px;padding-right:24px}
+header{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:baseline;padding-top:28px;padding-bottom:12px}
+header b{font-weight:600;letter-spacing:-.01em}
+nav{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--text)}
+.hero{padding:72px 0 64px}
+h1{font-size:clamp(2.2rem,6.4vw,3.7rem);line-height:1.08;letter-spacing:-.025em;font-weight:600;margin:0 0 22px;max-width:15ch}
+.lead{font-size:1.15rem;color:var(--muted);max-width:56ch;margin:0 0 30px}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border-radius:6px;border:1px solid var(--line);color:var(--text);text-decoration:none;font-size:15px;white-space:nowrap}
+.btn.main{background:var(--link);border-color:var(--link);color:#08121c;font-weight:600}
+.btn:hover{border-color:var(--link)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:1.5rem;letter-spacing:-.015em;margin:0 0 14px;font-weight:600}
+p{margin:0 0 16px;max-width:64ch}
+ul.plain{padding:0;margin:0 0 20px;list-style:none;max-width:64ch}
+ul.plain li{padding:10px 0;border-bottom:1px solid var(--line)}
+ul.plain li:first-child{border-top:1px solid var(--line)}
+ul.plain strong{font-weight:600}
+.meta{font:400 14px/1.6 var(--mono);color:var(--muted);margin:0 0 20px}
+.split{display:grid;gap:18px 40px;grid-template-columns:1fr}
+@media(min-width:700px){.split{grid-template-columns:1fr 1fr}}
+.split h3{font-size:1rem;margin:0 0 6px;font-weight:600}
+.split p{font-size:.95rem;color:var(--muted)}
+/* ledger demo */
+#chain{list-style:none;margin:22px 0 14px;padding:0;display:grid;gap:10px}
+#chain li{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:6px;padding:12px 14px}
+#chain li.bad{border-left-color:var(--bad)}
+.row{display:flex;justify-content:space-between;gap:12px;font:500 13px/1.4 var(--mono);margin-bottom:8px;flex-wrap:wrap}
+#chain li.ok .st{color:var(--ok)}
+#chain li.bad .st{color:var(--bad)}
+input{width:100%;font:inherit;font-size:15px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px 10px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:10px 0 0;font:400 13px/1.5 var(--mono);color:var(--muted)}
+dt{opacity:.7}dd{margin:0;overflow-wrap:anywhere}
+#status{font-weight:600;margin:0 0 6px}
+#status.ok{color:var(--ok)}#status.bad{color:var(--bad)}
+#head{font:400 13px var(--mono);color:var(--muted);margin:0 0 18px}
+button{font:inherit;font-size:15px;color:var(--text);background:transparent;border:1px solid var(--line);border-radius:6px;padding:9px 16px;cursor:pointer}
+button:hover{border-color:var(--link)}
+.note{font-size:.95rem;color:var(--muted);margin-top:18px}
+/* stack */
+.stack{display:grid;grid-template-columns:1fr;gap:4px 28px;margin:0}
+.stack dt{font:600 15px var(--sans);opacity:1;margin-top:16px}
+.stack dd{color:var(--muted);font:400 16px/1.6 var(--sans)}
+@media(min-width:700px){.stack{grid-template-columns:200px 1fr;gap:16px 28px}.stack dt{margin:0}}
+footer{padding-top:28px;padding-bottom:48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+</style>
 </head>
-<body class="text-slate-900 font-sans antialiased">
+<body>
+<header>
+  <b>Nawaz Sharif</b>
+  <nav aria-label="Sections">
+    <a href="#aegiskube">AegisKube</a>
+    <a href="#ledger">Ledger demo</a>
+    <a href="#stack">Stack</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- Top Status Bar -->
-  <div class="bg-slate-900 text-slate-300 text-xs font-mono py-2 px-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <span>● SENTINEL CI/CD: <strong class="text-emerald-400">PASSING</strong> | SHA-256 LEDGER: <strong class="text-cyan-400">VERIFIED</strong></span>
-      <a href="https://github.com/hey-nawazsharif/aegiskube-secops" target="_blank" class="text-emerald-400 hover:underline">aegiskube-secops ↗</a>
+<main>
+  <div class="hero">
+    <h1>I build security tooling for Linux and Kubernetes.</h1>
+    <p class="lead">Host hardening checks, log-based threat detection and audit trails that show when they have been altered. Written in Python, tested in CI, based in Dubai.</p>
+    <div class="links">
+      <a class="btn main" href="https://github.com/hey-nawazsharif/aegiskube-secops">See AegisKube-SecOps</a>
+      <a class="btn" href="mailto:contact@nawazsharif.in">Email me</a>
+      <a class="btn" href="https://github.com/hey-nawazsharif">GitHub profile</a>
     </div>
   </div>
 
-  <!-- Navbar -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-2">
-      <a href="#" class="font-mono text-base font-bold text-slate-900"><span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-xs mr-1">SEC</span>nawaz_sharif_</a>
-      <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-600">
-        <a href="#architecture" class="hover:text-emerald-600">Architecture</a>
-        <a href="#hashchain" class="hover:text-emerald-600">SHA-256 Chain</a>
-        <a href="#terminal" class="hover:text-emerald-600">Live CLI</a>
-        <a href="#skills" class="hover:text-emerald-600">Tech Stack</a>
-        <a href="https://github.com/hey-nawazsharif" target="_blank" class="text-emerald-700 font-mono">GitHub ↗</a>
-      </nav>
+  <section id="aegiskube">
+    <h2>AegisKube-SecOps</h2>
+    <p>An open-source security sentinel for Linux hosts and Kubernetes nodes. It reports what is misconfigured, spots attack patterns in auth logs, and records every finding in a hash-chained ledger.</p>
+    <ul class="plain">
+      <li><strong>Hardening audit.</strong> Read-only checks of kernel sysctl settings, SSH configuration, listening ports and known rootkit traces.</li>
+      <li><strong>Threat detection.</strong> Regex signatures, a sliding-window frequency count for brute force, and Z-score checks on network metrics. Rule-based, not a trained model.</li>
+      <li><strong>Tamper-evident ledger.</strong> SHA-256 hash chain with proof-of-work and a verify command that reports the first broken block.</li>
+    </ul>
+    <p class="meta">Python 3.10+ / GitHub Actions / Docker / Apache-2.0</p>
+    <p><strong>Next:</strong> file integrity monitoring, a SUID scanner, ML-based anomaly detection and a verified Kubernetes DaemonSet deployment. The roadmap in the README marks what is done and what is not.</p>
+    <div class="links">
+      <a class="btn" href="https://github.com/hey-nawazsharif/aegiskube-secops">Source code</a>
+      <a class="btn" href="https://github.com/hey-nawazsharif/aegiskube-secops/actions">CI runs</a>
     </div>
-  </header>
+  </section>
 
-  <main class="max-w-6xl mx-auto px-4 py-8 sm:py-12 space-y-12">
+  <section id="ledger">
+    <h2>Tamper with a ledger</h2>
+    <p>A simplified version of AegisKube's audit log (no proof-of-work). Change any entry and watch what the chain reports.</p>
+    <ol id="chain"></ol>
+    <p id="status">This demo needs JavaScript.</p>
+    <p id="head"></p>
+    <button id="rehash" type="button">Rewrite the chain like an attacker</button>
+    <button id="reset" type="button">Reset</button>
+    <p class="note">A rewritten chain is consistent again, but its last hash no longer matches the value saved elsewhere. That is why the latest hash should be stored outside the log it protects.</p>
+  </section>
 
-    <!-- HERO SECTION + PROFILE PHOTO -->
-    <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
-      <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8">
-        <div class="flex-1 text-center md:text-left">
-          <span class="pill bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono mb-4">🛡️ DevSecOps • Linux Hardening • Cloud Security</span>
-          <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
-            Engineering Zero-Trust <span class="text-emerald-600">Linux & Container Sentinels.</span>
-          </h1>
-          <p class="text-slate-600 text-sm sm:text-base max-w-2xl mb-6">
-            Hi, I'm <strong>Nawaz Sharif</strong>. I build automated Linux host-hardening auditors, cryptographic SHA-256 tamper-evident audit ledgers, and CI/CD security pipelines using Python, Docker, Linux, and Kubernetes.
-          </p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6 text-left font-mono text-xs">
-            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="text-slate-400 block">LEDGER</span><strong class="text-slate-900">SHA-256 Chain</strong></div>
-            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="text-slate-400 block">PROBE</span><strong class="text-slate-900">Read-Only Audit</strong></div>
-            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="text-slate-400 block">CI/CD</span><strong class="text-emerald-600">GitHub Actions</strong></div>
-            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><span class="text-slate-400 block">RUNTIME</span><strong class="text-slate-900">Python & Docker</strong></div>
-          </div>
-          <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3">
-            <a href="#architecture" class="btn px-6 py-3 rounded-xl bg
+  <section id="stack">
+    <h2>What I work with</h2>
+    <dl class="stack">
+      <dt>Linux</dt><dd>Hardening, sysctl and SSH configuration, auth log analysis, shell scripting.</dd>
+      <dt>Containers and Kubernetes</dt><dd>Docker, DaemonSets, RBAC, Pod Security Admission.</dd>
+      <dt>Code and delivery</dt><dd>Python, Bash, Git, GitHub Actions pipelines.</dd>
+      <dt>Security</dt><dd>Detection rules, risk scoring, hash chains and integrity checking.</dd>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Open to DevSecOps and security engineering roles. The quickest way to reach me is email.</p>
+    <div class="links">
+      <a class="btn main" href="mailto:contact@nawazsharif.in">contact@nawazsharif.in</a>
+      <a class="btn" href="https://github.com/hey-nawazsharif">github.com/hey-nawazsharif</a>
+    </div>
+  </section>
+</main>
+
+<footer>Nawaz Sharif, Dubai, UAE</footer>
+
+<script>
+(()=>{
+const seed=['Genesis block','SSH brute force from 185.224.128.67','Root login attempt blocked','sysctl: ip_forward=1 (expected 0)'];
+const list=document.getElementById('chain'),status=document.getElementById('status'),head=document.getElementById('head');
+if(!(window.crypto&&crypto.subtle)){status.textContent='This demo needs a secure context (https or localhost).';return}
+const enc=new TextEncoder(),Z='0'.repeat(64);
+const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const hashOf=(i,b)=>sha(i+'|'+b.data+'|'+b.prev);
+const short=h=>h.slice(0,10)+'…'+h.slice(-6);
+let blocks=[],anchor='',els=[],token=0;
+
+async function build(){
+  blocks=[];let prev=Z;
+  for(let i=0;i<seed.length;i++){const b={data:seed[i],prev};b.hash=await hashOf(i,b);blocks.push(b);prev=b.hash}
+  anchor=prev;list.textContent='';
+  els=blocks.map((b,i)=>{
+    const li=document.createElement('li');
+    li.innerHTML='<div class="row"><span>Block '+i+'</span><span class="st"></span></div><input spellcheck="false" aria-label="Entry for block '+i+'"><dl><dt>prev</dt><dd class="p"></dd><dt>hash</dt><dd class="h"></dd></dl>';
+    const inp=li.querySelector('input');inp.value=b.data;
+    inp.addEventListener('input',()=>{b.data=inp.value;check()});
+    list.append(li);return li;
+  });
+  check();
+}
+
+async function check(){
+  const t=++token;
+  const calc=await Promise.all(blocks.map((b,i)=>hashOf(i,b)));
+  if(t!==token)return;
+  let bad=-1;
+  blocks.forEach((b,i)=>{
+    const hashOk=calc[i]===b.hash,linkOk=i===0||b.prev===calc[i-1],li=els[i];
+    li.className=hashOk&&linkOk?'ok':'bad';
+    li.querySelector('.st').textContent=!hashOk?'Entry no longer matches its hash':!linkOk?'Link broken: previous block changed':'Valid';
+    li.querySelector('.p').textContent=short(b.prev);
+    li.querySelector('.h').textContent=short(b.hash);
+    if(bad<0&&li.className==='bad')bad=i;
+  });
+  const same=blocks[blocks.length-1].hash===anchor;
+  status.className=bad<0&&same?'ok':'bad';
+  status.textContent=bad>=0?'Tampering detected at block '+bad+'.':same?'Chain valid. Latest hash matches the saved value.':'Chain is consistent, but its latest hash differs from the saved value.';
+  head.textContent='Saved latest hash: '+short(anchor);
+}
+
+async function rehash(){
+  let prev=Z;
+  for(let i=0;i<blocks.length;i++){const b=blocks[i];b.prev=prev;b.hash=await hashOf(i,b);prev=b.hash}
+  check();
+}
+
+document.getElementById('rehash').addEventListener('click',rehash);
+document.getElementById('reset').addEventListener('click',build);
+build();
+})();
+</script>
+</body>
+</html>
